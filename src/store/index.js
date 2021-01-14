@@ -1,15 +1,27 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-export default new Vuex.Store({
+const vuex = new Vuex.Store({
+  // 定义要共享的状态
   state: {
+    shopPriceSum: 299.7,
   },
+  // 定义改变状态的方法
   mutations: {
+    increment(state, price) {
+      state.shopPriceSum += price;
+    },
+    decrement(state, price) {
+      state.shopPriceSum -= price;
+    },
   },
-  actions: {
+  getters: {
+    changPrice(state) {
+      return `￥${state.shopPriceSum.toFixed(2)}`;
+    },
   },
-  modules: {
-  }
-})
+});
+
+export default vuex;
