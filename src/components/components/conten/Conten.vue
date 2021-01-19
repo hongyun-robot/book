@@ -10,13 +10,13 @@
       经典著作/社会科学
       <book-item></book-item>
       <div class="bgImg2 bgimg"></div>
-      <div class="bookIntroduction">2</div>
+      <book-introduction />
     </a>
     <a href="javascript:;">
       玄幻/科幻
       <book-item></book-item>
       <div class="bgImg3 bgimg"></div>
-      <div class="bookIntroduction">3</div>
+      <book-introduction />
     </a>
   </div>
 </template> 

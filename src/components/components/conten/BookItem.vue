@@ -1,14 +1,27 @@
 <template>
   <div class="bookItem">
-    <img src="~assets/玄幻-1.jpg" alt="" />
-    <img src="~assets/玄幻-2.jpg" alt="" />
-    <img src="~assets/玄幻-3.jpg" alt="" />
-    <img src="~assets/玄幻-4.jpg" alt="" />
+    <img
+      :src="item"
+      v-for="(item, index) in img"
+      :key="index"
+      alt=""
+      title="点击查看详细信息"
+    />
   </div>
 </template>
 <script>
 export default {
   name: "BookItem",
+  data() {
+    return {
+      img: [
+        "/img/玄幻-1.12875323.jpg",
+        "/img/玄幻-2.797d0e72.jpg",
+        "/img/玄幻-3.fcd2c285.jpg",
+        "/img/玄幻-4.64c42e79.jpg",
+      ],
+    };
+  },
 };
 </script>
 <style lang="less">

@@ -8,10 +8,10 @@
     <div class="right" slot="right">
       <span>关注我们：</span>
       <a href="javascript:;"
-        ><img src="../../assets/icon/微信-5.png" alt="关注微信"
+        ><img src="~assets/icon/微信-5.png" alt="关注微信"
       /></a>
       <a href="javascript:;"
-        ><img src="../../assets/icon/QQ-5.png" alt="添加好友"
+        ><img src="~assets/icon/QQ-5.png" alt="添加好友"
       /></a>
     </div>
   </grail-layout>

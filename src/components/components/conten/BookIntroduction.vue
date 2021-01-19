@@ -1,5 +1,5 @@
 <template>
-  <div class="bookIntroduction">
+  <div class="bookIntroduction" style="display: none">
     <div class="bookIntroductionImg">
       <img src="~assets/玄幻-1.jpg" alt="" />
     </div>
@@ -21,7 +21,6 @@ export default {
 
 <style lang="less">
 .bookIntroduction {
-  opacity: 1;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
