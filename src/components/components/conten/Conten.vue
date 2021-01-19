@@ -1,29 +1,34 @@
 <template>
-  <div id="content">
+  <div id="content" @click="showBookIntroduction">
     <a href="javascript:;">
       玄幻/科幻
       <book-item></book-item>
-      <div class="bgImg1"></div>
+      <div class="bgImg1 bgimg"></div>
+      <book-introduction />
     </a>
     <a href="javascript:;">
       经典著作/社会科学
       <book-item></book-item>
-      <div class="bgImg2"></div>
+      <div class="bgImg2 bgimg"></div>
+      <div class="bookIntroduction">2</div>
     </a>
     <a href="javascript:;">
       玄幻/科幻
       <book-item></book-item>
-      <div class="bgImg3"></div>
+      <div class="bgImg3 bgimg"></div>
+      <div class="bookIntroduction">3</div>
     </a>
   </div>
 </template> 
 <script>
 import BookItem from "./BookItem";
+import BookIntroduction from "./BookIntroduction";
 export default {
   name: "Conten",
-  components: { BookItem },
+  components: { BookItem, BookIntroduction },
   data() {
     return {
+      getEl: document.querySelector("a:nth-child(1) .bookIntroduction"),
       t: 0,
       p: 0,
     };
@@ -36,7 +41,7 @@ export default {
       let i = 40;
       if ($(this).scrollTop() <= 100) {
         $("#content a").each((index, el) => {
-          $(`#content a:nth-child(${index + 1}) div`).css(
+          $(`#content a:nth-child(${index + 1}) .bgimg`).css(
             "backgroundPositionY",
             `${index * i}px`
           );
@@ -46,7 +51,7 @@ export default {
   },
   methods: {
     imgScrollTop(current) {
-      let $img = $(`#content a:nth-child(${current}) div`);
+      let $img = $(`#content a:nth-child(${current}) .bgimg`);
       let backgroundPositionY = $img.css("backgroundPositionY");
       $(window).scroll(function () {
         backgroundPositionY =
@@ -69,13 +74,17 @@ export default {
         }
       });
     },
+    showBookIntroduction(e) {
+      if (e.target.localName == "img") {
+        $(e.path[1]).siblings(".bookIntroduction").fadeToggle(500);
+      }
+    },
   },
 };
 </script>
 <style lang="less">
 #content {
   a {
-    position: relative;
     display: block;
     height: 85vh;
     cursor: default;
@@ -93,10 +102,9 @@ export default {
     }
     & > div:nth-child(2) {
       position: absolute;
-      left: -35vh;
-      top: 25vh;
+      left: 0;
       width: 100vw;
-      height: 60vh;
+      height: 58vh;
       background-attachment: fixed;
       background-position: center center;
       background-size: cover;

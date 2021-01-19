@@ -5,7 +5,7 @@
     <img src="~assets/玄幻-3.jpg" alt="" />
     <img src="~assets/玄幻-4.jpg" alt="" />
   </div>
-</template> 
+</template>
 <script>
 export default {
   name: "BookItem",
@@ -14,9 +14,9 @@ export default {
 <style lang="less">
 .bookItem {
   display: flex;
-  margin-top: 10px;
+  margin: 10px 0 20px;
   img {
-    margin: 0 65px;
+    margin: 0 11vh;
     height: 20vh;
     flex: 1;
     cursor: pointer;

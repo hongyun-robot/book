@@ -29,7 +29,6 @@ export default {
   },
   methods: {
     showShop() {
-      console.log(this.$refs.showShop);
       $(this.$refs.showShop.$el).slideDown(600);
     },
   },

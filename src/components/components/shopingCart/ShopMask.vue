@@ -98,8 +98,10 @@ export default {
       background-color: #909399;
       cursor: pointer;
       border-top-right-radius: 5px;
+      transition: all 0.7s;
       &:hover {
-        background-color: rgba(144, 147, 153, 0.8);
+        background-color: transparent;
+        color: #000;
       }
     }
   }
